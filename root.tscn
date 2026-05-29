@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4gdmeg60ocsk"]
+[gd_scene load_steps=5 format=3 uid="uid://c4gdmeg60ocsk"]
 
 [ext_resource type="PackedScene" uid="uid://j8kpdh7vt1ta" path="res://Background.tscn" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://dd7hdjir20kbo" path="res://player.tscn" id="2_pyidc"]
+[ext_resource type="Script" uid="uid://cd7ah0jo4w2nu" path="res://player.gd" id="2_vvh5c"]
+
+[sub_resource type="GDScript" id="GDScript_vvh5c"]
+script/source = "extends Camera2D
+"
 
 [node name="Root" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("2_pyidc")]
+z_index = 2
+script = ExtResource("2_vvh5c")
 
 [node name="TileMap" parent="." instance=ExtResource("1_pq8q7")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = SubResource("GDScript_vvh5c")

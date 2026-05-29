@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7d23b3h8nlyu"]
+
+[ext_resource type="PackedScene" uid="uid://dd7hdjir20kbo" path="res://player.tscn" id="2_0e48y"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, 1)
+
+[node name="Untitled" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(576, 324)
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="Character" parent="." instance=ExtResource("2_0e48y")]
