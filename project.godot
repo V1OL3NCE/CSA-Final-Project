@@ -11,6 +11,11 @@ config_version=5
 [application]
 
 config/name="CSA Final"
-run/main_scene="uid://c5oac8mleeqa5"
+run/main_scene="res://Background.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/borderless=true
+window/stretch/mode="canvas_items"
