@@ -18,21 +18,17 @@ func _physics_process(delta: float) -> void:
 radius = 6.7082
 
 [node name="Character" type="CharacterBody2D"]
-position = Vector2(500, 297)
 script = SubResource("GDScript_4flbx")
 
 [node name="CharacterTexture" type="Sprite2D" parent="."]
-position = Vector2(-500, -300)
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-500, -297)
 shape = SubResource("CircleShape2D_onrkg")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-500, -297)
 zoom = Vector2(2, 2)
 script = ExtResource("2_i3pqv")

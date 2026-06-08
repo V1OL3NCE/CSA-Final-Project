@@ -8,7 +8,7 @@
 
 [node name="Root" type="Node2D"]
 
-[node name="Character" parent="." instance=ExtResource("2_pyidc")]
+[node name="Player" parent="." instance=ExtResource("2_pyidc")]
 z_index = 2
 script = ExtResource("2_vvh5c")
 speed = 10000.0
@@ -16,5 +16,5 @@ speed = 10000.0
 [node name="TileMap" parent="." instance=ExtResource("1_pq8q7")]
 
 [node name="Enemy" parent="." instance=ExtResource("4_jnlp7")]
-position = Vector2(-594, -424)
+position = Vector2(-601, -428)
 script = ExtResource("5_l8v81")
