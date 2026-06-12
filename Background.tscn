@@ -10,7 +10,10 @@ texture = ExtResource("1_l3thc")
 [sub_resource type="TileSet" id="TileSet_jqsg2"]
 sources/0 = SubResource("TileSetAtlasSource_dpw2a")
 
-[node name="TileMap" type="TileMap"]
+[node name="Background" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = SubResource("TileSet_jqsg2")
 format = 2
 layer_0/tile_data = PackedInt32Array(262153, 0, 0, 327670, 0, 0, -262154, 0, 0, -327671, 0, 0, 262172, 0, 0, -327652, 0, 0, 851996, 0, 0, 851977, 0, 0, 917494, 0, 0, 917475, 0, 0, 327651, 0, 0, -262173, 0, 0, -917476, 0, 0, -917495, 0, 0, -851978, 0, 0, -851997, 0, 0, 1507318, 0, 0, 1507299, 0, 0, 1441801, 0, 0, 1441820, 0, 0, -1507300, 0, 0, -1507319, 0, 0, -1441802, 0, 0, -1441821, 0, 0)

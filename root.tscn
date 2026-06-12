@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4gdmeg60ocsk"]
+[gd_scene load_steps=5 format=3 uid="uid://c4gdmeg60ocsk"]
 
 [ext_resource type="PackedScene" uid="uid://j8kpdh7vt1ta" path="res://Background.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dd7hdjir20kbo" path="res://player.tscn" id="2_pyidc"]
 [ext_resource type="Script" uid="uid://cd7ah0jo4w2nu" path="res://player.gd" id="2_vvh5c"]
 [ext_resource type="PackedScene" uid="uid://5qnl1yhry2ww" path="res://Enemy.tscn" id="4_jnlp7"]
-[ext_resource type="Script" uid="uid://buenj8fxvb5jb" path="res://enemy.gd" id="5_l8v81"]
 
 [node name="Root" type="Node2D"]
 
@@ -13,9 +12,7 @@ z_index = 2
 script = ExtResource("2_vvh5c")
 speed = 10000.0
 
-[node name="TileMap" parent="." instance=ExtResource("1_pq8q7")]
-layer_0/tile_data = PackedInt32Array(262153, 0, 0, 327670, 0, 0, -262154, 0, 0, -327671, 0, 0, 262172, 0, 0, -327652, 0, 0, 851996, 0, 0, 851977, 0, 0, 917494, 0, 0, 917475, 0, 0, 327651, 0, 0, -262173, 0, 0, -917476, 0, 0, -917495, 0, 0, -851978, 0, 0, -851997, 0, 0, 1507318, 0, 0, 1507299, 0, 0, 1441801, 0, 0, 1441820, 0, 0, -1507300, 0, 0, -1507319, 0, 0, -1441802, 0, 0, -1441821, 0, 0, 1441839, 0, 0, 852015, 0, 0, 262191, 0, 0, -327633, 0, 0, -917457, 0, 0, -1507281, 0, 0, 1507280, 0, 0, 917456, 0, 0, 327632, 0, 0, -262192, 0, 0, -852016, 0, 0, -1441840, 0, 0, -2031664, 0, 0, -2031645, 0, 0, -2031626, 0, 0, -2097143, 0, 0, -2097124, 0, 0, -2097105, 0, 0, 2031663, 0, 0, 2031644, 0, 0, 2097104, 0, 0, 2097123, 0, 0, 2097142, 0, 0, 2031625, 0, 0)
-
 [node name="Enemy" parent="." instance=ExtResource("4_jnlp7")]
 position = Vector2(-601, -428)
-script = ExtResource("5_l8v81")
+
+[node name="Background" parent="." instance=ExtResource("1_pq8q7")]

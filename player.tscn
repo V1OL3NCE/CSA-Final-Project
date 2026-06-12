@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd7hdjir20kbo"]
 
-[ext_resource type="Script" path="res://camera_2d.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://bkyva7ncc1b1n" path="res://camera_2d.gd" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c3dhmrstbsudi" path="res://Arrow.png" id="2_onrkg"]
 
 [sub_resource type="GDScript" id="GDScript_4flbx"]
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 6.7082
 
-[node name="Character" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_4flbx")
 
 [node name="CharacterTexture" type="Sprite2D" parent="."]
