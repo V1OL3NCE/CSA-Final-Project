@@ -7,28 +7,38 @@
 script/source = "
 extends CharacterBody2D
 @export var speed: float = 300.0
+var health : int = 100
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
 	velocity = direction * speed
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	health -= 5
+	print(health)
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 6.7082
+radius = 14.0
 
 [node name="Character" type="CharacterBody2D"]
 script = SubResource("GDScript_4flbx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_onrkg")
+disabled = true
 
 [node name="CharacterTexture" type="Sprite2D" parent="."]
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_onrkg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_onrkg")
-disabled = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 script = ExtResource("2_i3pqv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
