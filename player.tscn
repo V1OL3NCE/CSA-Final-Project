@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd7hdjir20kbo"]
+[gd_scene format=3 uid="uid://dd7hdjir20kbo"]
 
-[ext_resource type="Script" uid="uid://bkyva7ncc1b1n" path="res://camera_2d.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://kpwoaib4xlld" path="res://camera_2d.gd" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c3dhmrstbsudi" path="res://Arrow.png" id="2_onrkg"]
 
 [sub_resource type="GDScript" id="GDScript_4flbx"]
@@ -20,25 +20,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(health)
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 14.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=1565864366]
 script = SubResource("GDScript_4flbx")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_onrkg")
-disabled = true
-
-[node name="CharacterTexture" type="Sprite2D" parent="."]
+[node name="CharacterTexture" type="Sprite2D" parent="." unique_id=204750289]
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_onrkg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1533872868]
+zoom = Vector2(1.5, 1.5)
+limit_enabled = false
 script = ExtResource("2_i3pqv")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2052096211]
+shape = SubResource("RectangleShape2D_onrkg")

@@ -1,18 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4gdmeg60ocsk"]
+[gd_scene format=3 uid="uid://c4gdmeg60ocsk"]
 
+[ext_resource type="Script" uid="uid://crbq6mge4xpog" path="res://spawner.gd" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://j8kpdh7vt1ta" path="res://Background.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://dd7hdjir20kbo" path="res://player.tscn" id="2_pyidc"]
 [ext_resource type="Script" uid="uid://cd7ah0jo4w2nu" path="res://player.gd" id="2_vvh5c"]
 [ext_resource type="PackedScene" uid="uid://5qnl1yhry2ww" path="res://Enemy.tscn" id="4_jnlp7"]
 
-[node name="Root" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28aoi"]
 
-[node name="Player" parent="." instance=ExtResource("2_pyidc")]
+[node name="Root" type="Node2D" unique_id=334187132]
+script = ExtResource("1_jnlp7")
+enemy_scene = ExtResource("4_jnlp7")
+
+[node name="Player" parent="." unique_id=1375592613 instance=ExtResource("2_pyidc")]
 z_index = 2
 script = ExtResource("2_vvh5c")
-speed = 10000.0
+speed = 200.0
+max_hp = 100
+dmg_cd = 0.5
+shoot_dmg = 10
+raycast_length = 1000.0
 
-[node name="Enemy" parent="." instance=ExtResource("4_jnlp7")]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=2076642129]
+shape = SubResource("RectangleShape2D_28aoi")
+
+[node name="Enemy" parent="." unique_id=1121929723 instance=ExtResource("4_jnlp7")]
 position = Vector2(-601, -428)
 
-[node name="Background" parent="." instance=ExtResource("1_pq8q7")]
+[node name="Background" parent="." unique_id=534363150 instance=ExtResource("1_pq8q7")]
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=356653738]
+position = Vector2(376, -286)
+
+[node name="Spawn2" type="Marker2D" parent="." unique_id=2014031505]
+position = Vector2(-467, -279)
+
+[node name="Spawn3" type="Marker2D" parent="." unique_id=2071799947]
+position = Vector2(-462, 284)
+
+[node name="Spawn4" type="Marker2D" parent="." unique_id=1966481218]
+position = Vector2(477, 296)
